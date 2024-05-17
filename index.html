@@ -15,34 +15,9 @@
     <li><a href="#">News</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
-  <button onclick="searchBar()" class="search">Search</button>
-  <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="Zoeken...">
-    <button id="searchButton" class="search-button">Zoek</button>
-</div>
-<div id="searchResults"></div>
+  <button class="search">Search</button>
   <button class="menu">Menu</button>
 </nav>
-<script>
-document.getElementById('searchButton').addEventListener('click', performSearch);
-document.getElementById('searchInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        performSearch();
-    }
-});
-
-function performSearch() {
-    const query = document.getElementById('searchInput').value;
-    if (query) {
-        // Hier kun je de logica invoegen om de zoekresultaten op te halen en weer te geven
-        // Bijvoorbeeld een API-aanroep, of filteren van lokale data
-        document.getElementById('searchResults').innerHTML = `Resultaten voor: ${query}`;
-    } else {
-        document.getElementById('searchResults').innerHTML = 'Voer een zoekterm in.';
-    }
-}
-
-</script>
 <img src="https://images.unsplash.com/photo-1629812456605-4a044aa38fbc?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NTc3ODI1OTg&ixlib=rb-1.2.1&q=80" alt="">
 </body>
 </html>
