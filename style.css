@@ -7,6 +7,10 @@ body {
     font-size: 16px; /* Aanpassen van font-size zodat de tekst zichtbaar is */
     font-family: Helvetica, Verdana, sans-serif;
 }
+p {
+  position: relative;
+  top: 30%;
+}
 nav {
     position: fixed;
     top: 0;
