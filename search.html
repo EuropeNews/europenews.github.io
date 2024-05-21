@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <style>
+        body {
+            font-family: Helvetica, Verdana, sans-serif;
+            margin: 20px;
+        }
+        .search-results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="search-results" id="searchResults">
+        <!-- Search results will be displayed here -->
+    </div>
+    <script>
+        // Function to get query parameter by name
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Function to display search results
+        function displaySearchResults(query) {
+            const searchResultsDiv = document.getElementById('searchResults');
+            // For demonstration, we're just displaying the search query
+            searchResultsDiv.innerHTML = `<p>You searched for: <strong>${query}</strong></p>`;
+            
+            // Here, you can add code to fetch and display actual search results
+            // For example, you might make an AJAX request to a server to get search results
+        }
+
+        // Get the search query from the URL
+        const searchQuery = getQueryParam('q');
+
+        // If there's a search query, display the results
+        if (searchQuery) {
+            displaySearchResults(searchQuery);
+        } else {
+            document.getElementById('searchResults').innerHTML = '<p>No search query provided.</p>';
+        }
+    </script>
+</body>
+</html>
