@@ -9,11 +9,11 @@ body {
 }
 h1 {
   position: relative;
-  top: 30%;
+  top: 40px;
 }
 p {
   position: relative;
-  top: 40%;
+  top: 50px;
 }
 nav {
     position: fixed;
