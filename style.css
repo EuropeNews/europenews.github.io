@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 25% 50%;
+  }
+}
+
+body {
+  background: linear-gradient(45deg, #009fe6, #097179, #13505c, #011718);
+  background-size: 300% 300%;
+  animation: gradientBackground 15s ease-in-out;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+ul {
+    list-style-type: none;
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 5px;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: Nunito;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
+  div.heading h1 {
+    font-family: Poetsen One;
+    color: white;
+    position: relative;
+    left: 10px;
+  }
+  a.active {
+    background-color: #111;
+  }
+  button {
+    border-radius: 3px;
+    font-family: Nunito;
+    color: white;
+    background-color: #333;
+    position: relative;
+    border: #111, initial;
+    left: 10px;
+  }
+  button:hover {
+    background-color: #111;
+    cursor: pointer;
+  }
+  p {
+    color: white;
+    font-family: Nunito;
+    position: relative;
+    left: 10px;
+  }
