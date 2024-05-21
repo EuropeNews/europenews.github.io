@@ -17,6 +17,16 @@
             padding: 10px;
             border: 1px solid #ddd;
         }
+        .search-result h2 {
+            margin: 0 0 10px;
+        }
+        .search-result p {
+            margin: 0 0 5px;
+        }
+        .search-result a {
+            color: blue;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -31,13 +41,13 @@
             return urlParams.get(param);
         }
 
-        // Sample dataset
+        // Sample dataset with links
         const dataset = [
-            { title: "EuropeNews Launches New Website", content: "Our new website offers a great user experience." },
-            { title: "EuropeNews Announces Partnership with Major Publisher", content: "This partnership will bring exclusive content." },
-            { title: "New Projects by EuropeNews", content: "Exciting new projects are on the horizon." },
-            { title: "Contact EuropeNews Team", content: "We value your feedback and inquiries." },
-            { title: "Breaking News in Europe", content: "Stay updated with the latest breaking news." },
+            { title: "EuropeNews Launches New Website", content: "Our new website offers a great user experience.", link: "article1.html" },
+            { title: "EuropeNews Announces Partnership with Major Publisher", content: "This partnership will bring exclusive content.", link: "article2.html" },
+            { title: "New Projects by EuropeNews", content: "Exciting new projects are on the horizon.", link: "projects.html" },
+            { title: "Contact EuropeNews Team", content: "We value your feedback and inquiries.", link: "contact.html" },
+            { title: "Breaking News in Europe", content: "Stay updated with the latest breaking news.", link: "news.html" },
         ];
 
         // Function to display search results
@@ -52,7 +62,11 @@
                 results.forEach(result => {
                     const resultDiv = document.createElement('div');
                     resultDiv.classList.add('search-result');
-                    resultDiv.innerHTML = `<h2>${result.title}</h2><p>${result.content}</p>`;
+                    resultDiv.innerHTML = `
+                        <h2><a href="${result.link}">${result.title}</a></h2>
+                        <p>${result.content}</p>
+                        <a href="${result.link}">Read more</a>
+                    `;
                     searchResultsDiv.appendChild(resultDiv);
                 });
             } else {
