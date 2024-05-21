@@ -54,6 +54,14 @@ a {
     text-decoration: underline;
   }
 }
+a.active {
+  color: inherit;
+  text-decoration: underline;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
 .list {
   list-style-type: none;
   margin-left: auto;
