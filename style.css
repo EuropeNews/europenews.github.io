@@ -81,35 +81,41 @@ a.active {
     }
 }
 .search,
-.menu {
-    display: inline-block;
-    padding: 0;
-    font-size: 0;
-    background: none;
-    border: none;
-    margin-left: 20px;
-    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
-}
-.search {
-    margin-left: auto;
-}
-.search::before {
-    content: '';
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background: center/1.3rem 1.3rem no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.17 14.81' width='15.17' height='14.81'%3E%3Cpath d='M6,.67A5.34,5.34,0,1,1,.67,6A5.33,5.33,0,0,1,6,.67ZM9.86,9.58l4.85,4.75Z' fill='none' stroke='%23fff' stroke-width='1.33'/%3E%3C/svg%3E");
-}
-.menu::before {
-    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.8 18.92' width='24.8' height='18.92'%3E%3Cpath d='M23.8,9.46H1m22.8,8.46H1M23.8,1H1' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='2'/%3E%3C/svg%3E");
-}
-@media (min-width: 640px) {
-    .menu {
-        display: none;
-    }
-}
-img {
-    width: 100%;
-    min-height: 200vh;
-    object-fit: cover;
-}
+        .menu {
+            display: inline-block;
+            padding: 0;
+            font-size: 0;
+            background: none;
+            border: none;
+            margin-left: 20px;
+            filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+        }
+        .search {
+            margin-left: auto;
+        }
+        .search::before {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            background: center/1.3rem 1.3rem no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.17 14.81' width='15.17' height='14.81'%3E%3Cpath d='M6,.67A5.34,5.34,0,1,1,.67,6A5.33,5.33,0,0,1,6,.67ZM9.86,9.58l4.85,4.75Z' fill='none' stroke='%23fff' stroke-width='1.33'/%3E%3C/svg%3E");
+        }
+        .menu::before {
+            content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.8 18.92' width='24.8' height='18.92'%3E%3Cpath d='M23.8,9.46H1m22.8,8.46H1M23.8,1H1' fill='none' stroke='%23fff' stroke-linecap='round' stroke-width='2'/%3E%3C/svg%3E");
+        }
+        @media (min-width: 640px) {
+            .menu {
+                display: none;
+            }
+        }
+        .search-input {
+            display: none;
+            margin-left: 20px;
+            padding: 5px;
+            font-size: 16px;
+        }
+        img {
+            width: 100%;
+            min-height: 200vh;
+            object-fit: cover;
+        }

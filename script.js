@@ -9,3 +9,16 @@ paragraph.textContent = 'Dit is een voorbeeld van een paragraaf die met JavaScri
 
 // Voeg de paragraaf toe aan de content div
 contentDiv.appendChild(paragraph);
+
+document.getElementById('searchButton').addEventListener('click', function() {
+    var searchInput = document.getElementById('searchInput');
+    if (searchInput.style.display === 'none' || searchInput.style.display === '') {
+        searchInput.style.display = 'inline-block';
+        searchInput.focus();
+    } else {
+        var query = searchInput.value;
+        if (query) {
+            window.location.href = 'search.html?q=' + encodeURIComponent(query);
+        }
+    }
+});
