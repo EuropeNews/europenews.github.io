@@ -12,6 +12,11 @@
         .search-results {
             margin-top: 20px;
         }
+        .search-result {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 <body>
@@ -26,14 +31,33 @@
             return urlParams.get(param);
         }
 
+        // Sample dataset
+        const dataset = [
+            { title: "EuropeNews Launches New Website", content: "Our new website offers a great user experience." },
+            { title: "EuropeNews Announces Partnership with Major Publisher", content: "This partnership will bring exclusive content." },
+            { title: "New Projects by EuropeNews", content: "Exciting new projects are on the horizon." },
+            { title: "Contact EuropeNews Team", content: "We value your feedback and inquiries." },
+            { title: "Breaking News in Europe", content: "Stay updated with the latest breaking news." },
+        ];
+
         // Function to display search results
         function displaySearchResults(query) {
             const searchResultsDiv = document.getElementById('searchResults');
-            // For demonstration, we're just displaying the search query
-            searchResultsDiv.innerHTML = `<p>You searched for: <strong>${query}</strong></p>`;
-            
-            // Here, you can add code to fetch and display actual search results
-            // For example, you might make an AJAX request to a server to get search results
+            const results = dataset.filter(item => 
+                item.title.toLowerCase().includes(query.toLowerCase()) ||
+                item.content.toLowerCase().includes(query.toLowerCase())
+            );
+
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const resultDiv = document.createElement('div');
+                    resultDiv.classList.add('search-result');
+                    resultDiv.innerHTML = `<h2>${result.title}</h2><p>${result.content}</p>`;
+                    searchResultsDiv.appendChild(resultDiv);
+                });
+            } else {
+                searchResultsDiv.innerHTML = '<p>No results found.</p>';
+            }
         }
 
         // Get the search query from the URL
