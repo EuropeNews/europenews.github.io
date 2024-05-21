@@ -6,14 +6,17 @@ body {
     min-height: 200vh;
     font-size: 16px; /* Aanpassen van font-size zodat de tekst zichtbaar is */
     font-family: Helvetica, Verdana, sans-serif;
+    background-color: #11114f;
 }
 h1 {
   position: relative;
   top: 40px;
+  color: white;
 }
 p {
   position: relative;
   top: 50px;
+  color: white;
 }
 nav {
     position: fixed;
