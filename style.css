@@ -92,6 +92,7 @@ a.active {
         }
         .search {
             margin-left: auto;
+            cursor: pointer;
         }
         .search::before {
             content: '';
@@ -113,6 +114,7 @@ a.active {
             margin-left: 20px;
             padding: 5px;
             font-size: 16px;
+            border-radius: 5px;
         }
         img {
             width: 100%;
