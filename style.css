@@ -75,3 +75,18 @@ ul {
     position: relative;
     left: 10px;
   }
+  img {
+    float: right;
+  }
+  #polenAfbeelding {
+    width: 200px;
+    height: 100px;
+  }
+  div {
+    width: 600px;
+    height: 100%;
+    background-color: #999999;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+  }
