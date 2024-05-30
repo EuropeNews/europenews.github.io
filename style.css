@@ -81,6 +81,7 @@ ul {
   .polenAfbeelding {
     width: 100px;
     height: 50px;
+    margin: 10px;
   }
   div {
     margin-left: auto;
