@@ -25,15 +25,22 @@ document.addEventListener("DOMContentLoaded", function() {
     xhr.send();
 });
 
-var goBackToHomeSvgBtn = document.getElementById("close")
+//var goBackToHomeSvgBtn = document.getElementById("close")
 
-goBackToHomeSvgBtn.addEventListener("click", function() {
-    // Toon het laadscherm
+//goBackToHomeSvgBtn.addEventListener("click", function() {
+    /// Toon het laadscherm
+    //document.getElementById("laadscherm").style.display = "flex";
+    /// Wacht 1 seconde voordat je de gebruiker doorstuurt
+    //setTimeout(function() {
+        /// Wijzig de locatie van het venster naar de gewenste URL
+        //window.location.href = "./";
+    //}, 1000); /// Laad de pagina na 1 seconde
+
+//});
+
+function goBackToHome() {
     document.getElementById("laadscherm").style.display = "flex";
-    // Wacht 1 seconde voordat je de gebruiker doorstuurt
     setTimeout(function() {
-        // Wijzig de locatie van het venster naar de gewenste URL
-        window.location.href = "./";
-    }, 1000); // Laad de pagina na 1 seconde
-
-});
+        window.location.href= "https://europenews.github.io"
+    }, 1000);
+};
