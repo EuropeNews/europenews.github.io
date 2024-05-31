@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
@@ -28,29 +27,42 @@
         });
     </script>
     <title>EuropeNews</title>
+    <link rel="stylesheet" href="https://europenews.github.io/styles.css">
+    <link rel="shortcut icon" href="https://europenews.github.io/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://europenews.github.io/images/favicon.png">
 </head>
 <body>
-    <div class="container">
-        <div class="menu">
+    <header>
+        <div class="logo"><ul><li><a title="Link naar homepage" href="./">EuropeNews</a></li></ul></div>
+        <nav>
             <ul>
-                <li><a href="./" class="active">Home</a></li>
-                <li><a href="./artikel">Artikel</a></li>
-                <li><a href="./news">Nieuws</a></li>
-                <li><a href="./informatie">informatie</a></li>
+                <li><a title="Nieuws" href="#">Nieuws</a></li>
+                <li><a title="Sport" href="#">Sport</a></li>
+                <li><a title="Live" href="#">Live</a></li>
+                <li><a title="Programma's" href="#">Programma's</a></li>
             </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Laadscherm dat standaard verborgen is -->
+        <div id="laadscherm" style="display: none;">
+            <div id="laadtekst">Even geduld, pagina wordt geladen...</div>
         </div>
-        <div class="heading">
-            <h1><strong>Home</strong></h1>
-        </div>
-        <div class="other">
-            <p id="text-to-copy" data-custom-id="text-to-share">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad<br>
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit<br>
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia<br>
-            deserunt mollit anim id est laborum.</p>
-            <button id="share-button">Delen</button>
-            <button id="copy-button">Kopieer tekst</button>
-        </div>
-    </div>
-    <script src="script.js"></script>
+        <section class="news-grid">
+            <article id="Article1">
+                <img src="https://europenews.github.io/images/polen.png" alt="nieuws afbeelding">
+                <h2>Rusland begint oorlog met Polen</h2>
+            </article>
+            <!-- <article>
+                <img src="./images/" alt="nieuws afbeelding">
+                <h2>Headline 2</h2>
+            </article> -->
+            <!-- More articles -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; EuropeNews 2024</p>
+    </footer>
+    <script src="https://europenews.github.io/script.js"></script>
 </body>
 </html>
