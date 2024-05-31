@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Cookie Banner -->
+    <link rel="stylesheet" href="cookiebanner.style.css">
+    <script src="cookiebanner.script.js"></script>
+    <style>
+        *{text-decoration:none;list-style:none;box-sizing:border-box;}
+    </style>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(function(OneSignal) {
+        OneSignal.init({
+          appId: "7e18273e-c93f-499b-b3a4-5179de950600",
+        });
+      });
+    </script>
+    <script>
+        $(document).ready(function() {
+            cookieBanner.init();
+        });
+    </script>
+    <title>EuropeNews</title>
+    <link rel="stylesheet" href="https://europenews.github.io/styles.css">
+    <link rel="shortcut icon" href="https://europenews.github.io/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://europenews.github.io/images/favicon.png">
+</head>
+<body>
+    <header>
+        <div class="logo"><ul><li><a title="Link naar homepage" href="./">EuropeNews</a></li></ul></div>
+        <nav>
+            <ul>
+                <li><a title="Nieuws" href="#">Nieuws</a></li>
+                <li><a title="Sport" href="#">Sport</a></li>
+                <li><a title="Live" href="#">Live</a></li>
+                <li><a title="Programma's" href="#">Programma's</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Laadscherm dat standaard verborgen is -->
+        <div id="laadscherm" style="display: none;">
+            <div id="laadtekst">Even geduld, pagina wordt geladen...</div>
+        </div>
+        <section class="news-grid">
+            <article id="Article1">
+                <img src="https://europenews.github.io/images/polen.png" alt="nieuws afbeelding">
+                <h2>Rusland begint oorlog met Polen</h2>
+            </article>
+            <!-- <article>
+                <img src="./images/" alt="nieuws afbeelding">
+                <h2>Headline 2</h2>
+            </article> -->
+            <!-- More articles -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; EuropeNews 2024</p>
+    </footer>
+    <script src="https://europenews.github.io/script.js"></script>
+</body>
+</html>
