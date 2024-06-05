@@ -26,6 +26,11 @@ header {
     color: #000;
 }
 
+.logo a.active {
+    text-decoration: none;
+    color: #E61E14;
+}
+
 .logo ul {
     list-style-type: none;
     margin: 0;
