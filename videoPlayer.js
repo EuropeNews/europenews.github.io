@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const videoContainer = document.getElementById("videoContainer");
-    const playPauseButton = document.getElementById("playPauseButton");
-    const seekBar = document.getElementById("seekBar");
+    const commentsList = document.getElementById("commentsList");
+    const commentInput = document.getElementById("commentInput");
+    const submitCommentButton = document.getElementById("submitCommentButton");
     let player;
   
     // Load YouTube video player
@@ -11,9 +12,8 @@ document.addEventListener("DOMContentLoaded", function() {
         width: '640',
         videoId: 'joNmFRMSTYk', // Replace with your YouTube video ID or live stream ID
         playerVars: {
-          'controls': 0,
-          'autoplay': 0,
-          'fs': 0,
+          'autoplay': 1,
+          'controls': 1,
           'playsinline': 1
         },
         events: {
@@ -25,30 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
   
     // Function called when YouTube player is ready
     function onYouTubePlayerReady(event) {
-      // Add play/pause functionality
-      playPauseButton.addEventListener("click", function() {
-        if (player.getPlayerState() === YT.PlayerState.PLAYING) {
-          player.pauseVideo();
-          playPauseButton.textContent = "Play";
-        } else {
-          player.playVideo();
-          playPauseButton.textContent = "Pause";
-        }
-      });
-  
-      // Add seeking functionality
-      seekBar.addEventListener("input", function() {
-        const time = player.getDuration() * (seekBar.value / 100);
-        player.seekTo(time);
-      });
+      // Add event listener for submitting comments
+      submitCommentButton.addEventListener("click", submitComment);
     }
   
-    // Function called when YouTube player state changes
-    function onYouTubePlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PLAYING) {
-        playPauseButton.textContent = "Pause";
-      } else {
-        playPauseButton.textContent = "Play";
+    // Function to submit a comment
+    function submitComment() {
+      const commentText = commentInput.value;
+      if (commentText.trim() !== "") {
+        const commentElement = document.createElement('li');
+        commentElement.textContent = commentText;
+        commentsList.appendChild(commentElement);
+        commentInput.value = "";
       }
     }
   
