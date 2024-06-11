@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function() {
       player = new YT.Player('videoContainer', {
         height: '360',
         width: '640',
-        videoId: 'PCLqHqf2ap8', // Replace VIDEO_ID_HERE with the YouTube live stream ID
+        videoId: 'PCLqHqf2ap8', // Replace with your YouTube video ID or live stream ID
         playerVars: {
-          'controls': 0, // Disable YouTube default controls
-          'autoplay': 0, // Autoplay disabled, you can enable it if needed
-          'fs': 0, // Disable fullscreen button
-          'playsinline': 1 // Enable inline playback on iOS
+          'controls': 0,
+          'autoplay': 0,
+          'fs': 0,
+          'playsinline': 1
         },
         events: {
           'onReady': onYouTubePlayerReady,
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
       });
   
       // Add seeking functionality
-      seekBar.addEventListener("change", function() {
+      seekBar.addEventListener("input", function() {
         const time = player.getDuration() * (seekBar.value / 100);
         player.seekTo(time);
       });
