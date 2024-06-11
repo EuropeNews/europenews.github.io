@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
       player = new YT.Player('videoContainer', {
         height: '360',
         width: '640',
-        videoId: 'VIDEO_ID_HERE', // Replace VIDEO_ID_HERE with the YouTube live stream ID
+        videoId: 'PCLqHqf2ap8', // Replace VIDEO_ID_HERE with the YouTube live stream ID
         playerVars: {
           'controls': 0, // Disable YouTube default controls
           'autoplay': 0, // Autoplay disabled, you can enable it if needed
