@@ -182,13 +182,56 @@ button:not(:disabled):not(.disabled) {
     text-decoration: none;
 }
 
-#controls {
+/* Container for the video player */
+#videoContainer {
+    margin: 20px auto;
+    width: 640px;
+    height: 360px;
+  }
+  
+  /* Custom controls */
+  #controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 10px;
+  }
+  
+  #playPauseButton {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  #playPauseButton:hover {
+    background-color: #2980b9;
   }
   
   #seekBar {
     width: 100%;
+    margin-left: 10px;
   }
   
-  /* You can customize the styles further according to your preference */
+  #seekBar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 20px;
+    background-color: #3498db;
+    cursor: pointer;
+    border-radius: 3px;
+  }
   
+  #seekBar::-moz-range-thumb {
+    width: 10px;
+    height: 20px;
+    background-color: #3498db;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  /* You can further customize the styles according to your preference */
