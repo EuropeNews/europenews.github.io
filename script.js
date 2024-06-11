@@ -8,6 +8,7 @@ Article1.addEventListener("click", function() {
          // Wijzig de locatie van het venster naar de gewenste URL
          window.location.href = "./artikel/0000001-Rusland-begint-oorlog-met-Polen";
      }, 1000); // Laad de pagina na 1 seconde
+     document.getElementById("laadscherm").style.display = "none";              
  
 });
 
