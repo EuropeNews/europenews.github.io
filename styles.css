@@ -181,4 +181,8 @@ button:not(:disabled):not(.disabled) {
     background-color: #f1f1f1;
     text-decoration: none;
 }
-  
+
+.LivePlayer1 {
+    position: relative;
+    text-align: center;
+}
