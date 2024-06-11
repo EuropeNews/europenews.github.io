@@ -182,7 +182,13 @@ button:not(:disabled):not(.disabled) {
     text-decoration: none;
 }
 
-.LiveVideoPlayer {
-    width: 50%;
-    margin: 0 auto; 
-}
+#controls {
+    margin-top: 10px;
+  }
+  
+  #seekBar {
+    width: 100%;
+  }
+  
+  /* You can customize the styles further according to your preference */
+  
