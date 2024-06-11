@@ -1,11 +1,5 @@
 @font-face {font-family: 'Comme'; src: url(fonts/Comme.ttf);}
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -182,8 +176,17 @@ button:not(:disabled):not(.disabled) {
     text-decoration: none;
 }
   
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
   #videoContainer {
-    margin: 20px auto;
     width: 640px;
     height: 360px;
   }
