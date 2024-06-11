@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
       player = new YT.Player('videoContainer', {
         height: '360',
         width: '640',
-        videoId: 'PCLqHqf2ap8', // Replace with your YouTube video ID or live stream ID
+        videoId: 'dQw4w9WgXcQ', // Replace with your YouTube video ID or live stream ID
         playerVars: {
           'controls': 0,
           'autoplay': 0,
