@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
       player = new YT.Player('videoContainer', {
         height: '360',
         width: '640',
-        videoId: 'joNmFRMSTYk', // Replace VIDEO_ID_HERE with the YouTube video ID or live stream ID
+        videoId: 'VIDEO_ID_HERE', // Replace VIDEO_ID_HERE with the YouTube live stream ID
         playerVars: {
           'controls': 0, // Disable YouTube default controls
           'autoplay': 0, // Autoplay disabled, you can enable it if needed
@@ -53,9 +53,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   
     // Load YouTube iframe API asynchronously
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    if (typeof YT === 'undefined' || typeof YT.Player === 'undefined') {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    } else {
+      loadYouTubePlayer();
+    }
   });
   
