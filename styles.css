@@ -182,8 +182,7 @@ button:not(:disabled):not(.disabled) {
     text-decoration: none;
 }
 
-.LivePlayer1 {
-    position: relative;
-    text-align: center;
-    border-radius: 5px;
+.LiveVideoPlayer {
+    width: 50%;
+    margin: 0 auto; 
 }
