@@ -1,8 +1,8 @@
 // Array met advertentie-URL's
 var advertenties = [
-    "amazon-banner-ad-example.png",
-    "liquid-web-banner-ad-example.png",
-    "windows10-pro.png"
+    "ads/amazon-banner-ad-example.png",
+    "ads/liquid-web-banner-ad-example.png",
+    "ads/windows10-pro.png"
 ];
 
 // Index voor de huidige advertentie
