@@ -1,53 +1,30 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const videoContainer = document.getElementById("videoContainer");
-    const commentsList = document.getElementById("commentsList");
-    const commentInput = document.getElementById("commentInput");
-    const submitCommentButton = document.getElementById("submitCommentButton");
-    let player;
-  
-    // Load YouTube video player
-    function loadYouTubePlayer() {
-      player = new YT.Player('videoContainer', {
-        height: '360',
-        width: '640',
-        videoId: 'joNmFRMSTYk', // Replace with your YouTube video ID or live stream ID
+// 1. Laad de IFrame Player API code asynchroon.
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// 2. Maak een YouTube-speler nadat de API code de iframe_api geladen heeft.
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'joNmFRMSTYk', // Vervang dit door je YouTube video ID
         playerVars: {
-          'autoplay': 1,
-          'controls': 1,
-          'playsinline': 1
+            'autoplay': 1,
+            'controls': 0,
+            'modestbranding': 1,
+            'rel': 0,
+            'showinfo': 0,
+            'iv_load_policy': 3
         },
         events: {
-          'onReady': onYouTubePlayerReady,
-          'onStateChange': onYouTubePlayerStateChange
+            'onReady': onPlayerReady
         }
-      });
-    }
-  
-    // Function called when YouTube player is ready
-    function onYouTubePlayerReady(event) {
-      // Add event listener for submitting comments
-      submitCommentButton.addEventListener("click", submitComment);
-    }
-  
-    // Function to submit a comment
-    function submitComment() {
-      const commentText = commentInput.value;
-      if (commentText.trim() !== "") {
-        const commentElement = document.createElement('li');
-        commentElement.textContent = commentText;
-        commentsList.appendChild(commentElement);
-        commentInput.value = "";
-      }
-    }
-  
-    // Load YouTube iframe API asynchronously
-    if (typeof YT === 'undefined' || typeof YT.Player === 'undefined') {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      const firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    } else {
-      loadYouTubePlayer();
-    }
-  });
-  
+    });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}

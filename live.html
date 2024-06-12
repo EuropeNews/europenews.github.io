@@ -44,17 +44,12 @@
         </nav>
     </header>
     <main>
-        <div id="videoContainer">
-            <!-- YouTube iframe will be placed here -->
-          </div>
-        
-          <div id="commentsContainer">
-            <h2>Viewer Comments</h2>
-            <textarea id="commentInput" placeholder="Leave a comment..."></textarea>
-            <button id="submitCommentButton">Submit</button>
-            <ul id="commentsList"></ul>
-          </div>
-          
+        <div class="video-wrapper">
+            <div class="video-container">
+                <div id="player"></div>
+            </div>
+        </div>
+
         <!-- Laadscherm dat standaard verborgen is -->
         <div id="laadscherm" style="display: none;">
             <div id="laadtekst">Even geduld, pagina wordt geladen...</div>
@@ -72,6 +67,6 @@
     </footer>
     <script src="https://europenews.github.io/script.js"></script> 
     <script src="https://www.youtube.com/iframe_api"></script>
-    <script src="videoPlayer.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
