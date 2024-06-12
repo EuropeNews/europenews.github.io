@@ -193,8 +193,8 @@ button:not(:disabled):not(.disabled) {
 
 .video-container {
     position: relative;
-    width: 640px; /* Standaard breedte van de videospeler */
-    height: 360px; /* Standaard hoogte van de videospeler */
+    width: 1280px; /* Standaard breedte van de videospeler */
+    height: 740px; /* Standaard hoogte van de videospeler */
     background-color: #000;
     overflow: hidden;
     border-radius: 10px; /* Ronde hoeken voor een modern uiterlijk */
