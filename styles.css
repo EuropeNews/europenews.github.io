@@ -186,7 +186,7 @@ button:not(:disabled):not(.disabled) {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 480px;
     margin: 0;
     padding: 0;
 }
