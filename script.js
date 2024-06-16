@@ -19,7 +19,7 @@ Article2.addEventListener("click", function() {
     // Wacht 1 seconde voordat je de gebruiker doorstuurt
     setTimeout(function() {
         // Wijzig de locatie van het venster naar de gewenste URL
-        window.location.href = "./artikel/0000001-Rusland-begint-oorlog-met-Polen";
+        window.location.href = "./artikel/0000002-Interview-Rusland-begint-oorlog-met-polen";
         document.getElementById("laadscherm").style.display = "none";   
     }, 1000); // Laad de pagina na 1 seconde           
 
