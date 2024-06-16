@@ -209,3 +209,14 @@ button:not(:disabled):not(.disabled) {
     height: 100%;
     border-radius: 10px; /* Ronde hoeken voor het iframe */
 }
+
+h2#InterviewTextArticle1 {
+    position: relative;
+    top: 20px;
+}
+
+img#interviewImage {
+    padding: 20px;
+    position: relative;
+    top: 10px;
+}
