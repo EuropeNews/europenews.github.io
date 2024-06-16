@@ -210,7 +210,7 @@ button:not(:disabled):not(.disabled) {
     border-radius: 10px; /* Ronde hoeken voor het iframe */
 }
 
-h2#InterviewTextArticle1 {
+h2#InterviewTextArticle2 {
     position: relative;
     top: 20px;
 }
