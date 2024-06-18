@@ -230,4 +230,5 @@ img#afbeelding1vanPage2 {
     position: relative;
     left: 35px;
     top: 25px;
+    border-radius: 20px;
 }
