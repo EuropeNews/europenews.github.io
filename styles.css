@@ -222,3 +222,12 @@ img#interviewImage {
     position: relative;
     top: 10px;
 }
+
+
+img #afbeelding1vanPage2 {
+    height: 400px;
+    width: 534px;
+    position: relative;
+    left: 35px;
+    top: -100px;
+}
