@@ -224,7 +224,7 @@ img#interviewImage {
 }
 
 
-img #afbeelding1vanPage2 {
+img#afbeelding1vanPage2 {
     height: 400px;
     width: 534px;
     position: relative;
