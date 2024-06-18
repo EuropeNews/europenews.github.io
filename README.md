@@ -6,9 +6,6 @@ EuropeNews is a fake news website for a school project. So don't take the news t
 ### Dutch
 EuropeNews is een nepnieuws website voor een school project. Dus neem het nieuws niet al te serieus.
 
-## Copyright
-Iven Boxem en Aron Dokter
-
 
 ## Badges
 
