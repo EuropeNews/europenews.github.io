@@ -86,9 +86,10 @@ footer {
     border-radius: 3px;
 }
 
-#Article1 {
+#Article1, Article2, Article3 {
     cursor: pointer;
 }
+
 
 /* Stijl voor het laadscherm */
 #laadscherm {
