@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geheime Pagina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Toegangscode Validatie -->
+        <h2>Toegangscode Vereist</h2>
+        <input type="password" id="codeInput" placeholder="Voer toegangscode in">
+        <button id="validateButton">Valideer</button>
+
+        <!-- Geheime Content -->
+        <div id="secretContent" class="hidden">
+            <h3>Welkom bij de geheime pagina!</h3>
+            <p>Hier kun je geheime informatie plaatsen of functies toevoegen.</p>
+
+            <!-- Formulier voor update toevoegen -->
+            <h3>Update Toevoegen</h3>
+            <label for="updateTitle">Titel van de Update:</label>
+            <input type="text" id="updateTitle" placeholder="Bijvoorbeeld: Nieuwe functie toegevoegd">
+            
+            <label for="updateContent">Beschrijving van de Update:</label>
+            <textarea id="updateContent" rows="5" placeholder="Beschrijf hier de update..."></textarea>
+            
+            <button id="submitUpdate">Update Toevoegen</button>
+        </div>
+    </div>
+
+    <script>
+        // SHA-256 hash functie
+        async function hashCode(input) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(input);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            return Array.from(new Uint8Array(hashBuffer))
+                .map(b => b.toString(16).padStart(2, '0'))
+                .join('');
+        }
+
+        // Valideer de toegangscode
+        document.getElementById('validateButton').addEventListener('click', async function () {
+            const codeInput = document.getElementById('codeInput').value;
+
+            const hashedCode = await hashCode(codeInput);
+
+            // Vervang deze hash door de SHA-256 hash van je toegangscode
+            const validHash = "4c4c5c8a3f3a8fa4c94762e70d3c8b1c6d991f11a2a0245bc6272c8c09c56ba6"; // Voor "henk"
+
+            if (hashedCode === validHash) {
+                alert("Toegangscode gevalideerd!");
+                document.getElementById('secretContent').classList.remove('hidden');
+                document.getElementById('codeInput').value = ''; // Reset het veld
+            } else {
+                alert("Onjuiste toegangscode.");
+            }
+        });
+
+        // Update toevoegen
+        document.getElementById('submitUpdate').addEventListener('click', function () {
+            const updateTitle = document.getElementById('updateTitle').value;
+            const updateContent = document.getElementById('updateContent').value;
+
+            if (!updateTitle || !updateContent) {
+                alert("Vul alstublieft alle velden in.");
+                return;
+            }
+
+            // Update toevoegen aan localStorage
+            const updates = JSON.parse(localStorage.getItem('updates')) || [];
+            updates.push({
+                title: updateTitle,
+                content: updateContent,
+                date: new Date().toISOString().split('T')[0], // Alleen de datum (YYYY-MM-DD)
+            });
+            localStorage.setItem('updates', JSON.stringify(updates));
+
+            alert("Update succesvol toegevoegd!");
+            // Reset velden
+            document.getElementById('updateTitle').value = '';
+            document.getElementById('updateContent').value = '';
+        });
+    </script>
+</body>
+</html>
