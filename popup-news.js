@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async function () {
-    const repoOwner = "jouw-gebruikersnaam"; // Vervang dit met jouw GitHub-gebruikersnaam
+    const repoOwner = "europenews"; // Vervang dit met jouw GitHub-gebruikersnaam
     const repoName = "europenews.github.io"; // Vervang dit met jouw repositorynaam
     const updateList = document.getElementById("updateList");
     const popup = document.getElementById("updatePopup");
