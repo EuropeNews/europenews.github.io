@@ -236,49 +236,57 @@ img#afbeelding1vanPage2 {
 
 .popup {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #f9f9f9;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    width: 400px;
     z-index: 1000;
 }
 
-.popup.hidden {
-    display: none;
-}
-
-.popup-content {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.popup-content h2 {
     text-align: center;
-    max-width: 400px;
-    width: 90%;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-#updateList {
-    text-align: left;
+.update-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.update-list li {
+    background: #e8f4ff;
     margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #bcd8f7;
+    font-size: 14px;
+    color: #333;
 }
 
-#closePopup {
-    padding: 10px 20px;
-    background: #007BFF;
+.update-list li:nth-child(odd) {
+    background: #dfefff;
+}
+
+button#closePopup {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #007bff;
     color: #fff;
+    padding: 10px 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
 }
 
-#closePopup:hover {
-    background: #0056b3;
-}
-
-.hidden {
-    display: none;
+button#closePopup:hover {
+    background-color: #0056b3;
 }
